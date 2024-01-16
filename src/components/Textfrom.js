@@ -6,18 +6,30 @@ export default function Textfrom(props) {
         let newText = text.toUpperCase();
         setText(newText)
     }
-    
+
     const handleLowClick = () =>{
         let newText = text.toLowerCase();
         setText(newText)
     } 
 
+    const clearClick = () =>{
+        let newText = "";
+        setText(newText)
+    }
+
+    const handleTitleClick = () =>{
+        let newText = text.split(' ')
+        .map(w => w[0].toUpperCase() + w.substring(1).toLowerCase())
+        .join(' ');
+        setText(newText)
+        
+    }
     const handleOnChange = (event) =>{
         setText(event.target.value)
     }
 
 
-    const [text, setText] = useState('Enter Text Here');
+    const [text, setText] = useState('');
     return (
     <>
       <div className="container">
@@ -30,8 +42,10 @@ export default function Textfrom(props) {
           onChange={handleOnChange}
         ></textarea>
         <br/>
+        <button className="btn btn-primary mx-1" onClick={handleTitleClick}>Convert To Titlecase</button>
         <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert To Uppercase</button>
         <button className="btn btn-primary mx-1" onClick={handleLowClick}>Convert To Lowercase</button> 
+        <button className="btn btn-primary mx-1" onClick={clearClick}>Clear Text</button> 
       </div>
       <div className="container">
         <h1>Your Text Summary</h1>

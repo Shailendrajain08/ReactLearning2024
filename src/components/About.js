@@ -5,39 +5,39 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 
 export default function About() {
   const [myStyle, setMyStyle] = useState({
-    color: "black",
+    color: "#042845",
     backgroundColor: "white",
   });
 
   const [btnStyle, setBtnStyle] = useState({
-    color: "black",
+    color: "#042845",
     backgroundColor: "white",
-    border: '1px solid black'
+    border: '1px solid #042845'
   });
 
   const [btnTxt, setBtnTxt] = useState ("Enable Dark Mode")
 
   let toggleStyle = () => {
-    if (myStyle.color === "black") {
+    if (myStyle.color === "#042845") {
       setMyStyle({
         color: "white",
-        backgroundColor: "black",
+        backgroundColor: "#042845",
       });
       setBtnStyle({
         color: "white",
-        backgroundColor: "black",
+        backgroundColor: "#042845",
         border: '1px solid white'
       });
       setBtnTxt("Enable Light Mode")
     } else {
       setMyStyle({
-        color: "black",
+        color: "#042845",
         backgroundColor: "white",
       });
       setBtnStyle({
-        color: "black",
+        color: "#042845",
         backgroundColor: "white",
-        border: '1px solid black'
+        border: '1px solid #042845'
       });
       setBtnTxt("Enable Dark Mode");
     }
